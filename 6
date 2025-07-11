@@ -4,7 +4,7 @@ use Workerman\Connection\AsyncTcpConnection;
 use Workerman\Timer;
 use Workerman\Protocols\Http;
 use Workerman\Protocols\Http\Response;
-require_once __DIR__ . '/vendor/autoload.php';
+
  $worker = new Worker('http://0.0.0.0:2222');
     $worker->onWorkerStart = function($worker) {
         
