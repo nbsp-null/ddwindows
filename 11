@@ -1,0 +1,24 @@
+<?php
+use Workerman\Worker;
+use Workerman\Connection\AsyncTcpConnection;
+use Workerman\Timer;
+use Workerman\Protocols\Http;
+use Workerman\Protocols\Http\Response;
+
+ $worker = new Worker('http://0.0.0.0:2222');
+    $worker->onWorkerStart = function($worker) {
+        
+    };
+    // ：HTTPWorker
+	
+    $worker->count = 1;
+    $worker->onMessage = function($connection, $request) {
+			$response = new Response(200, [
+			'Content-Type' => 'text/plain',
+			'Access-Control-Allow-Origin' => '*'
+		], 'Ok');
+		$connection->send($response);
+    };
+    // Worker
+    Worker::runAll();
+?>
