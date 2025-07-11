@@ -1,19 +1,1 @@
-<?php 
 
-$worker = new Worker('http://0.0.0.0:1234');
-    $worker->onWorkerStart = function($worker) {
-        
-    };
-  
-	
-    $worker->count = 1;
-    $worker->onMessage = function($connection, $request) {
-			$response = new Response(200, [
-			'Content-Type' => 'text/plain',
-			'Access-Control-Allow-Origin' => '*'
-		], 'Ok');
-		$connection->send($response);
-    };
-   
-    Worker::runAll();
-    ?>
