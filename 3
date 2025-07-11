@@ -1,10 +1,6 @@
 <?php 
-use Workerman\Worker;
-use Workerman\Connection\AsyncTcpConnection;
-use Workerman\Timer;
-use Workerman\Protocols\Http;
-use Workerman\Protocols\Http\Response;
-$worker = new Worker('http://0.0.0.0:5666');
+
+$worker = new Worker('http://0.0.0.0:1234');
     $worker->onWorkerStart = function($worker) {
         
     };
